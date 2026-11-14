@@ -43,7 +43,7 @@ variable "private_subnet_count" {
 variable "availability_zones" {
   description = "List of availability zones"
   type        = list(string)
-  default     = ["ap-southeast-2", "ap-southeast-1"]
+  default     = ["ap-southeast-2a", "ap-southeast-2b"]
 }
 
 variable "ami_id" {
