@@ -104,7 +104,7 @@ jobs:
 
       - name: Terraform Plan
         id: plan
-        run: terraform plan -var-file=$TF_VAR_FILE -no-color -input=false -out=tfplan
+        run: terraform plan -var-file=$TF_VAR_FILE -no-color -input=false -lock-timeout=5m -out=tfplan
         continue-on-error: true
 
       - name: Update Pull Request
@@ -196,4 +196,4 @@ jobs:
           path: .
 
       - name: Terraform Apply
-        run: terraform apply -auto-approve -input=false tfplan
+        run: terraform apply -auto-approve -input=false -lock-timeout=5m tfplan
